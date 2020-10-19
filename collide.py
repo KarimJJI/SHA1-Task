@@ -59,8 +59,8 @@ def my60sha():
     for i in word_lst:
         hash_object = hashlib.sha1((bytes(i, encoding = 'utf-8')))
         hex_dig = hash_object.hexdigest()
-        hash_lst.append(str(hex_dig)[: 12])
-        word_hash.write(i +" [" + str(hex_dig)[: 12] + "]\n")
+        hash_lst.append(str(hex_dig)[: 15])
+        word_hash.write(i +" [" + str(hex_dig)[: 15] + "]\n")
     word_hash.close()
 
     for i in hash_lst:
@@ -71,7 +71,7 @@ def my60sha():
                 match.append(i)
                 unique[i] += 1
 
-    print("\n60....Well 54-BIT HASH COLLISIONS:\n")
+    print("\n60-BIT HASH COLLISIONS:\n")
 
     for i in match:
         if i == "da39a3ee5e6b":
